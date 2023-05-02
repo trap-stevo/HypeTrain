@@ -1,23 +1,23 @@
 const router = require("express").Router();
-const usercontroller = require("../../contollers/usercontroller.js");
+const userController = require("../../contollers/usercontroller.js");
 
 router.route("/")
-  .post(usercontroller.create)
-  .get(userController.findById);
+.post(userController.createHypeUsers)
+.get(userController.getHypeUser);
 
+router.route("/:username")
+.get(userController.getHypeUserWithHypeUserName)
+.post(userController.createHypeUserIdentification);
 
-router.route("/:email")
-   .post(usercontroller.create)
-  .get(usercontroller.findByEmail);
-  router.route("/signin")
-  .post(usercontroller.create)
-  .get(usercontroller.findAll);
+router.route("/signin")
+.get(userController.getHypeUser)
+.post(userController.createHypeUsers);
 
 // Matches with "/api/user/:id"
-router
-  .route("/:id")
-  .get(userController.findById)
-  .put(userController.update)
-  .delete(userController.remove);
+// router.route("/:id")
+// .get(userController.findById)
+// .put(userController.update)
+// .delete(userController.remove);
 
 module.exports = router
+
