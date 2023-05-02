@@ -12,35 +12,35 @@ export const HypeAccessEncryptionProtocol =
           .then(resp => resp)
 }
      
-export export function getHypeUsers()
+export function getHypeUsers()
 {
      const hypeTrainBeaconSignalData = HypeTrainBeaconActivation('SELECT * FROM HypeUsers');
      
      return confirmHypeTrainUniversalContinuumSignalData(hypeTrainBeaconSignalData);
 }
      
-export export function getHypeUserWithHypeUserName(hypeUserNames)
+export function getHypeUserWithHypeUserName(hypeUserNames)
 {
      const hypeTrainBeaconSignalData = hypeTrainBeaconActivation('SELECT HIL.HypeIdentificationID,  HIL.HypeUsername, HIL.HypeDisplayname,FROM ((HypeIdentificationList AS HIL INNER JOIN HypeNameList AS HNL ON HIL.HypeIdentificationID = HNL.HypeNameID) INNER JOIN HypeUsers ON HIL.HypeIdentificationID = HypeUsers.HypeID) WHERE HIL.HypeUsername = ?', hypeUserNames);
      
      return confirmHypeTrainUniversalContinuumSignalData(hypeTrainBeaconSignalData);
 }
      
-export export function getHypeUsersCredentials()
+export function getHypeUsersCredentials()
 {
      const hypeTrainBeaconSignalData = hypeTrainBeaconActivation('SELECT * FROM HypeCredentialsInterface');
      
      return confirmHypeTrainUniversalContinuumSignalData(hypeTrainBeaconSignalData); 
 }
      
-export export function getHypeUser(iDs)
+export function getHypeUser(iDs)
 {
      const hypeTrainBeaconSignalData = hypeTrainBeaconActivation('SELECT * FROM HypeUsers AS HU WHERE HU.HypeID = ?', iDs);
      
      return confirmHypeTrainUniversalContinuumSignalData(hypeTrainBeaconSignalData);
 }
      
-export export function getHypeUserDisplayNameData(iDs)
+export function getHypeUserDisplayNameData(iDs)
 {
      const hypeTrainBeaconSignalData = hypeTrainBeaconActivation('SELECT * FROM HypeNameList AS HU WHERE HIL.HypeNameID = ?', iDs);
        
