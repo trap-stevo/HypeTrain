@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const userController = require("../../contollers/usercontroller.js");
 
-router.route("/")
+router.route("/Login")
 .post(userController.createHypeUsers)
 .get(userController.getHypeUser);
 

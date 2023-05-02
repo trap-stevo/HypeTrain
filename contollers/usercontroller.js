@@ -1,3 +1,5 @@
+const db = require("../models")
+
 class HypeContinuumDataAccess
 {
    static hypeContinuumAccess = null;

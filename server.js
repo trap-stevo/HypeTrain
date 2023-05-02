@@ -41,8 +41,10 @@ const bodyParser = require("body-parser");
 const logger = require("morgan")
 const cors = require ("cors") 
 
-const routes = require("./routes/api/index.js")
+const routes = require("./routes/api")
 const app = express();
+
+
 
 app.use(cors());
 app.set("View engine", "ejs");
@@ -52,7 +54,10 @@ app.use(logger("dev"));
 
 const PORT = 8080;
 
-app.use(routes)
+// app.use(routes)
+
+
+
 const legendaryHypeTrainContinuumConnection = hypeTrainMySQL.createConnection({
      host     : process.env.RDS_HOSTNAME,
      
