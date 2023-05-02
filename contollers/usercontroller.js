@@ -1,7 +1,4 @@
-
-    
-
-async class HypeContinuumDataAccess
+class HypeContinuumDataAccess
 {
    static hypeContinuumAccess = null;
    
@@ -14,7 +11,7 @@ async class HypeContinuumDataAccess
         return this.hypeContinuumAccess;
    }
    
-   const HypeAccessEncryptionProtocol = 
+    HypeAccessEncryptionProtocol = 
    {
      encryptHypeAccessKey : (hypeAccessKey ) =>
           bcrypt.genSalt(10)
@@ -75,7 +72,7 @@ async class HypeContinuumDataAccess
         return confirmHypeTrainUniversalContinuumSignalData(hypeTrainBeaconSignalData); 
    }
    
-   createHypeUserIdentification (hypeUserName, hypeDisplayName, hypeEmail)
+   async createHypeUserIdentification (hypeUserName, hypeDisplayName, hypeEmail)
    {
         checkHypeDataInstance('CREATE TABLE IF NOT EXISTS HypeIdentificationInterface (HypeIdentificationID INT NOT NULL PRIMARY KEY, HypeUsername VARCHAR(99), HypeDisplayName VARCHAR(99), HypeEmail VARCHAR(6999))');
         
@@ -86,7 +83,7 @@ async class HypeContinuumDataAccess
         return hypeIdentityID;
    }
    
-   createHypeUserCredential(hypeAccessKey)
+   async createHypeUserCredential(hypeAccessKey)
    {
         checkHypeDataInstance("CREATE TABLE IF NOT EXISTS HypeCredentialsInterface (HypeCredentialID INT NOT NULL PRIMARY KEY, HypeAccessKey BINARY(64))");
         
@@ -99,7 +96,7 @@ async class HypeContinuumDataAccess
         return hypeCredentialID;
    }
    
-   createHypeUserDisplayNameData(hypeFirstName, hypeLastName)
+   async createHypeUserDisplayNameData(hypeFirstName, hypeLastName)
    {
         checkHypeDataInstance('CREATE TABLE IF NOT EXISTS HypeNameList (HypeNameID INT NOT NULL PRIMARY KEY, HypeFirstName VARCHAR(99), HypeLastName VARCHAR(99))');
         
@@ -110,7 +107,7 @@ async class HypeContinuumDataAccess
         return hypeNameID;
    }
    
-   createHypeUserProfileContents(hypeProfilePicPath)
+   async createHypeUserProfileContents(hypeProfilePicPath)
    {
         checkHypeDataInstance('CREATE TABLE IF NOT EXISTS HypeProfileContents (HypeProfileContentID INT NOT NULL PRIMARY KEY, HypeProfilePic LONGBLOB)');
         
