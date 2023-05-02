@@ -2,7 +2,7 @@ const mysql = require("mysql");
 const schema = mysql.schema;
 const HypeNameListschema = new schema({
     HypeNameID : {
-        type : Int,
+        type : Number,
         required : "HypeNameID is Required"
     },
     
