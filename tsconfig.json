@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "skipDefaultLibCheck": true,
+    "moduleResolution": "node",
+    "target": "es6",
+    "module": "commonjs",
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true
+
+  },
+  "extends": "expo/tsconfig.base",
+  
+
+}

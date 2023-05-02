@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "name": "HypeTrain",
+    "slug": "HypeTrain",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  {
+    "expo": {
+         "entryPoint": "./app.js"
+    }
+  },
+  "name": "HypeTrain"
+}
