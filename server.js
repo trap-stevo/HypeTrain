@@ -248,20 +248,7 @@ function checkHypeDataInstance(hypeBeaconSignalProtocol)
 
 
 
-{
-     const hypeID =  confirmHypeUniversalGateWayID([createHypeUniverseGateKey(0, 49151)], getHypeUser, 0, 49151);
-     
-     const hypeCredentialID = createHypeUserCredential(hypeAccessKey);
-     
-     const hypeIdentificationID = createHypeUserIdentification(hypeUserName, hypeDisplayName, hypeEmail);
-     
-     const hypeProfileContentsID = createHypeUserProfileContents(hypeProfilePicPath);
-     
-     const hypeNameID = createHypeUserDisplayNameData(hypeFirstName, hypeLastName);
-     
-     checkHypeDataInstance('CREATE TABLE IF NOT EXISTS HypeUsers (HypeID INT NOT NULL PRIMARY KEY, HypeProfileContentID INT, HypeCredentialID INT, HypeIdentificationID INT,HypeNameID INT,  FOREIGN KEY (HypeNameID) REFERENCES HypeNameList(HypeNameID), FOREIGN KEY (HypeProfileContentID) REFERENCES HypeProfileContents(HypeProfileContentID), FOREIGN KEY (HypeProfileContentID) REFERENCES HypeProfileContents(HypeProfileContentID),           FOREIGN KEY (HypeCredentialID) REFERENCES HypeCredentialsInterface(HypeCredentialID), FOREIGN KEY (HypeCredentialID) REFERENCES HypeCredentialsInterface(HypeCredentialID),           FOREIGN KEY (HypeIdentificationID) REFERENCES HypeIdentificationList(HypeIdentificationID))');
-     return hypeTrainBeaconActivation('INSERT INTO HypeUsers VALUES (?, ?, ?, ?, ?)', [hypeID, hypeProfileContentsID, hypeCredentialID, hypeIdentificationID, hypeNameID]);
-}
+
 
 
 async function addHypeCartIntoHypeUniversalNetwork(hypeTopicID, currentInteractedHypeUserID, hypeTopicRelationID)
